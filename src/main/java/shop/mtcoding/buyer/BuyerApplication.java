@@ -1,13 +1,13 @@
-package shop.mtcoding.ddddd;
+package shop.mtcoding.buyer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DddddApplication {
+public class BuyerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DddddApplication.class, args);
+		SpringApplication.run(BuyerApplication.class, args);
 	}
 
 }
