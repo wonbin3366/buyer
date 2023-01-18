@@ -10,4 +10,5 @@ public class ProductController {
     public String home() {
         return "product/list";
     }
+
 }
