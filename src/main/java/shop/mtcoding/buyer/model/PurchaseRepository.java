@@ -6,13 +6,13 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface PurchaseRepository {
-    public int insert(String name, int price, int qty);
+    public int insert(int userId, int productId);
 
-    public List<Product> findAll();
+    public List<Purchase> findAll();
 
-    public Product findById(int id);
+    public Purchase findById(int id);
 
-    public int updateById(int id, String name, int price, int qty);
+    public int updateById(int id, int userId, int productId);
 
     public int deleteById(int id);
 }
