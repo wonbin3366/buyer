@@ -49,5 +49,4 @@ public class UserController {
             return "redirect:/joinForm";
         }
     }
-
 }
