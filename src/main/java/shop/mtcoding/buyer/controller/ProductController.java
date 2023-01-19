@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.servlet.mvc.method.annotation.PrincipalMethodArgumentResolver;
 
 import shop.mtcoding.buyer.model.Product;
 import shop.mtcoding.buyer.model.ProductRepository;
@@ -27,8 +28,12 @@ public class ProductController {
     @GetMapping("/product/{id}")
     public String findById(@PathVariable int id, Model model) {
         Product product = productRepository.findById(id);
-        model.addAttribute("product", product);
-        return "/product/detail";
+        if (product == null) {
+            return "redirect:/notfound";
+        } else {
+            model.addAttribute("product", product);
+            return "/product/detail";
+        }
     }
 
     @GetMapping("/product/{id}/purchaseForm")
