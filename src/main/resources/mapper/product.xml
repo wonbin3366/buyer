@@ -29,7 +29,7 @@
    </update>   
 
     <update id="updateByQty">
-          update product_tb
+           update product_tb
           set qty = qty-#{qty}
           where id = #{id}
     </update>
