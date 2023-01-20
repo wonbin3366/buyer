@@ -21,6 +21,7 @@
                 <td>${product.createdAtToString}</td>
             </tr>
         </table>
+        <c:if test="${principal != null}" >
         <form action="/purchase/insert" method="post">
             <input type="hidden" name="productId" value="${product.id}">
             <select name="count">
@@ -30,4 +31,5 @@
             </select>
             <button type="submit">구매하기</button>
         </form>
+        </c:if>
         <%@ include file="../layout/footer.jsp" %>
